@@ -2,6 +2,7 @@
 #include <string>
 #include <map>
 #include <vector>
+
 #include "Room.hpp"
 #include "Item.hpp"
 #include "Character.hpp"
@@ -29,10 +30,9 @@ int main() {
 	player.SetLocation(&startRoom);
 	// Game loop (basic interaction)
 	while (true) {
-		std::cout << "Current Location: " << player.GetLocation() -
-> GetDescription() << std::endl;
+		std::cout << "Current Location: " << player.GetLocation() -> GetDescription() << std::endl;
 		std::cout << "Items in the room:" << std::endl;
-		for (const Item& item : player.GetLocation()->GetItems()) {
+		for (Item& item : player.GetLocation()->GetItems()) {
 			std::cout << "- " << item.GetName() << ": " <<
 				item.GetDescription() << std::endl;
 		}

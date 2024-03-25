@@ -44,7 +44,7 @@ void Room::AddExit(const std::string& compass, Room* room) {
 
 }
 
-string GetOppositeDirection(const string& direction, string& opposite) {
+string Room::GetOppositeDirection(const string& direction, string& opposite) {
     if (direction == "north") {
         return  "south";
     }
@@ -60,3 +60,7 @@ string GetOppositeDirection(const string& direction, string& opposite) {
     return "Invalid direction";
 }
 
+Room* Room::GetExit(std::string direct)
+{
+    return exits[direct];
+}
