@@ -2,8 +2,11 @@
 #include <string>
 #include <map>
 #include <vector>
+#include "Room.hpp"
+#include "Item.hpp"
+#include "Character.hpp"
 
-
+using namespace std;
 int main() {
 	// Create Rooms
 	Room startRoom("You are in a dimly lit room.");
@@ -46,8 +49,7 @@ int main() {
 		}
 		else if (choice == 2) {
 			// Player interacts with an item in the room
-			std::cout << "Enter the name of the item you want to interact
-				with: ";
+			std::cout << "Enter the name of the item you want to interact with: ";
 				std::string itemName;
 			std::cin >> itemName;
 			for (Item& item : player.GetLocation()->GetItems()) {
@@ -83,55 +85,3 @@ int main() {
 	return 0;
 }
 
-
-
-
-
-class Room {
-private:
-	std::string description;
-	std::map<std::string, Room*> exits;
-	std::vector<Item> items;
-public:
-	Room(const std::string& desc);
-	void AddItem(const Item& item);
-	void RemoveItem(const Item& item);
-};
-// Example usage:
-Room startRoom("You are in a dimly lit room.");
-
-
-
-
-class Item {
-private:
-	std::string name;
-	std::string description;
-public:
-	Item(const std::string& name, const std::string& desc);
-	void Interact();
-};
-// Example usage:
-Item key("Key", "A shiny key that looks important.");
-
-
-
-
-class Character {
-private:
-	std::string name;
-	int health;
-	std::vector<Item> inventory;
-public:
-	Character(const std::string& name, int health);
-	void TakeDamage(int damage);
-};
-class Player : public Character {
-private:
-	Room* location;
-public:
-	Player(const std::string& name, int health);
-};
-// Example usage:
-Player player1("Alice", 100);
-player1.SetLocation(&startRoom); // Set the player's starting room
