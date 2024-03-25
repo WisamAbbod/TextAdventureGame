@@ -12,7 +12,7 @@ Room::Room(const std::string& desc)
 
 void Room::AddItem(const Item& item)
 {
-    Item.push_back(item);
+   
     cout << "Item added to room" << endl;
 
 }
