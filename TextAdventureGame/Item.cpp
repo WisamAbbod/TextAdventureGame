@@ -12,9 +12,9 @@ std::string Item::GetName()
 	return name;
 }
 
-void Item::Interact(const std::string& inter)
+void Item::Interact()
 {
-	
-	std::cout << inter;
+	std::cout << "you interacted with the " << name << std::endl;
+	std::cout << description;
 
 }

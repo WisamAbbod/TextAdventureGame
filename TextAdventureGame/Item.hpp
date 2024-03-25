@@ -8,7 +8,7 @@ private:
 	std::string description;
 public:
 	Item(const std::string& name, const std::string& desc);
-	void Interact(const std::string & inter);
+	void Interact();
 	std::string GetName();
 };
 

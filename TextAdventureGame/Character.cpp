@@ -24,3 +24,12 @@ void Character::TakeDamage(int damage)
 	health = health - damage;
 
 }
+void Player::SetLocation(Room* locate)
+{
+	this->location = locate;
+}
+
+Room* Player::GetLocation()
+{
+	return location;
+}

@@ -16,12 +16,16 @@ public:
 	void TakeDamage(int damage);
 	int getHealth();
 	void setHealth(int health);
+
+
 };
 class Player : public Character {
 private:
 	Room* location;
 public:
 	Player(const std::string& name, int health);
+	Room* GetLocation();   //getter for  player location
+	void SetLocation(Room* locate);     //setter for player location
 };
 
 /*
